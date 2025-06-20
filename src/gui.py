@@ -138,7 +138,6 @@ class ClickerGUI:
         self.bind_mode = False
         self.clicking = False
         self.bound_key = None
-        # This function in your keybind module must connect key events to toggle clicking
         setup_keybind(self)
 
     def toggle_clicking(self):
