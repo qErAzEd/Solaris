@@ -1,8 +1,8 @@
 import customtkinter
 import os
 import sys
-from .config import load_config, save_config
-from .keybind import setup_keybind
+from config import load_config, save_config
+from keybind import setup_keybind
 
 class ClickerGUI:
     def __init__(self, root, config_file="clicker_config.json"):
