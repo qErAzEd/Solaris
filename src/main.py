@@ -1,5 +1,5 @@
 import customtkinter
-from src.gui import ClickerGUI
+from gui import ClickerGUI
 
 def main():
     root = customtkinter.CTk()
