@@ -1,6 +1,7 @@
 import threading
 import pynput.keyboard
-from .mouse import autoclick_loop
+from mouse import autoclick_loop
+from config import save_config
 
 def setup_keybind(gui):
     def on_key_press(key):
@@ -12,8 +13,7 @@ def setup_keybind(gui):
             gui.bind_mode = False
             gui.app.after(0, lambda: gui.bind_button.configure(text="Bind"))
             gui.app.after(0, lambda: gui.bind_value.configure(text=gui.bound_key.upper()))
-            from .config import save_config
-            save_config(gui.config_file, min_cps=int(gui.min_slider.get()), max_cps=int(gui.max_slider.get()), bound_key=gui.bound_key)
+            save_config(gui.config_file, int(gui.min_slider.get()), int(gui.max_slider.get()), gui.bound_key)
             return
         if gui.bound_key is None:
             return
