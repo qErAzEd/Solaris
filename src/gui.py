@@ -19,10 +19,7 @@ class ClickerGUI:
         self.app.geometry('600x400')
         self.app.resizable(False, False)
         self.app.title('Solaris AutoClicker')
-        if hasattr(sys, '_MEIPASS'):
-            base_path = sys._MEIPASS
-        else:
-            base_path = os.path.abspath(".")
+        base_path = os.path.dirname(os.path.dirname(__file__)) if not hasattr(sys, '_MEIPASS') else sys._MEIPASS
         icon_path = os.path.join(base_path, "assets", "icon.ico")
         if os.path.exists(icon_path):
             self.app.iconbitmap(icon_path)
